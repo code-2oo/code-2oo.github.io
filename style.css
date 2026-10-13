@@ -1,36 +1,62 @@
+/* ============================================
+   ROOT VARIABLES
+============================================ */
 :root {
-    --primary-color: rgb(45, 57, 100);
-    --secondary-color: rgb(26, 29, 45);
-    --accent-color: rgb(198, 238, 89);
-    --detail-color: rgb(247, 156, 82);
+    /* Color Palette */
+    --color-primary: rgb(45, 57, 100);
+    --color-alt-primary: rgb(219, 219, 219);
+    --color-secondary: rgb(26, 29, 45);
+    --color-accent: rgb(198, 238, 89);
+    --color-detail: rgb(247, 156, 82);
+    --color-text-light: rgb(219, 219, 219);
+    --color-text-white: #ffffff;
 
-    --alt-primary-color: rgb(219, 219, 219);
+    /* Typography */
+    --font-sans: "Albert Sans", sans-serif;
+    --font-mono: "Red Hat Mono", monospace;
+    --font-display: "Unbounded", sans-serif;
+
+    /* Layout */
+    --max-width: 1200px;
+    --spacing-sm: 2px;
+    --spacing-md: 10px;
+    --spacing-lg: 20px;
+    --spacing-xl: 40px;
+}
+
+/* ============================================
+   BASE STYLES
+============================================ */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
 }
 
 body {
-    background-color: var(--primary-color);
+    background-color: var(--color-primary);
     margin: 0;
+    font-family: var(--font-sans);
 }
 
-section {
-    margin: 0;
+/* ============================================
+   LAYOUT UTILITIES
+============================================ */
+.container {
+    margin: auto 0;
+    padding: var(--spacing-lg) var(--spacing-lg);
 }
 
-section div {
-    max-width: 1200px;
+
+.container div {
+    max-width: var(--max-width);
     margin: 0 auto;
-    padding: 20px 0;
+    padding: var(--spacing-lg) 0;
 }
 
-.section-title {
-    font-family: "Unbounded", sans-serif;
-    font-size: 30px;
-}
-
-.accent {
-    color: var(--accent-color);
-}
-
+/* ============================================
+   NAVBAR
+============================================ */
 .navbar {
     font-family: "Albert Sans", sans-serif;
     border-radius: 6px;
@@ -39,7 +65,7 @@ section div {
     top: 2px;
     margin: 0 auto;
     max-width: 1240px;
-    background-color: var(--secondary-color);
+    background-color: var(--color-secondary);
 }
 
 .navbar-links {
@@ -62,15 +88,22 @@ section div {
     color: white;
 }
 
-.navbar-links a:hover {
-    color: var(--accent-color);
+.navbar-links a:hover,
+.navbar-links a:focus {
+    color: var(--color-accent);
+}
+
+/* ============================================
+   TYPOGRAPHY
+============================================ */
+.section-title {
+    font-family: var(--font-display);
+    font-size: 30px;
 }
 
 .path {
-    font-family: "Red Hat Mono", monospace;
-    font-optical-sizing: auto;
+    font-family: var(--font-mono);
     font-weight: 200;
-    font-style: normal;
     font-size: 18px;
 }
 
@@ -79,148 +112,12 @@ section div {
 }
 
 .path span:hover {
-    color: var(--accent-color);
-}
-
-#main-title {
-    color: white;
-}
-
-.h-grid {
-    display: flex;
-    flex-direction: row;
-    gap: 10px;
-}
-
-@media only screen and (max-width: 800px) {
-    .h-grid {
-        flex-direction: column;
-    }
-}
-
-
-.h-grid .cell {
-    margin: auto;
-    flex-grow: 1;
-    min-width: 400px;
+    color: var(--color-accent);
 }
 
 .title {
+    font-family: var(--font-display);
     font-size: 50px;
-    font-family: "Unbounded", sans-serif;
-}
-
-.code-block {
-    margin: 0 auto;
-    font-family: monospace;
-    line-height: 2;
-}
-
-.code-block div {
-    font-family: "Red Hat Mono", monospace;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-size: 16px;
-    font-style: normal;
-    padding: 10px;
-    border-style: solid;
-    border-color: var(--accent-color);
-    border-width: 0 1px 0 1px;
-    border-collapse: collapse;
-    box-shadow: 0 0 1px var(--accent-color);
-    background-color: var(--secondary-color);
-
-}
-
-.code-block-header {
-    text-align: right;
-    border-top-width: 1px !important;
-    border-radius: 10px 10px 0 0;
-}
-
-.code-block-footer {
-    text-align: right;
-    border-bottom-width: 1px !important;
-    border-radius: 0 0 10px 10px;
-}
-
-.code-key {
-    color: var(--accent-color);
-}
-
-.code-value {
-    color: var(--detail-color);
-}
-
-.highlight {
-    color: var(--accent-color);
-}
-
-.profile {
-    margin: 40px 0;
-    font-family: "Albert Sans", sans-serif;
-    font-size: 20px;
-    text-justify: auto;
-    text-align: justify;
-}
-
-#studies {
-    background-color: var(--alt-primary-color);
-    color: var(--primary-color);
-    opacity: 1;
-}
-
-#experience {
-    background-color: var(--alt-primary-color);
-    color: var(--primary-color);
-    opacity: 0.8;
-}
-
-#links {
-    background-color: var(--alt-primary-color);
-    color: var(--primary-color);
-    opacity: 1;
-}
-
-.section-title {
-    margin: 0;
-}
-
-.list-item {
-    list-style-type: none;
-    margin-bottom: 10px;
-}
-
-.link {
-    text-decoration: none;
-}
-
-.accent {
-    color: var(--accent-color);
-}
-
-.bg-accent {
-    color: var(--accent-color);
-    background-color: var(--secondary-color);
-    width: fit-content;
-    padding: 2px 5px;
-    border-radius: 6px;
-}
-
-.detail {
-    color: var(--detail-color);
-}
-
-.bg-detail {
-    color: var(--detail-color);
-    background-color: var(--secondary-color);
-    width: fit-content;
-    padding: 2px 5px;
-    border-radius: 6px;
-}
-
-.title-font {
-    font-family: "Unbounded", sans-serif;
 }
 
 .body-font {
@@ -239,10 +136,148 @@ section div {
     font-weight: bold;
 }
 
-.no-tab-list {
-    padding-left: 0;
+.accent {
+    color: var(--color-accent);
+}
+
+.bg-accent {
+    color: var(--color-accent);
+    background-color: var(--color-secondary);
+    width: fit-content;
+    padding: 2px 5px;
+    border-radius: 6px;
+}
+
+.detail {
+    color: var(--color-detail);
+}
+
+.bg-detail {
+    color: var(--color-detail);
+    background-color: var(--color-secondary);
+    width: fit-content;
+    padding: 2px 5px;
+    border-radius: 6px;
+}
+
+/* ============================================
+   CODE BLOCK COMPONENT
+============================================ */
+.code-block {
+    font-family: var(--font-mono);
+    font-size: 16px;
+    line-height: 2;
+    font-weight: 200;
+    margin: 0 auto;
+}
+
+.code-block div {
+    background-color: var(--color-secondary);
+    border-style: solid;
+    border-color: var(--color-accent);
+    border-width: 0 1px 0 1px;
+    border-collapse: collapse;
+    box-shadow: 0 0 1px var(--color-accent);
+    padding: var(--spacing-md);
+
+}
+
+.code-block-header {
+    text-align: right;
+    border-top-width: 1px !important;
+    border-radius: 10px 10px 0 0;
+}
+
+.code-block-footer {
+    text-align: right;
+    border-bottom-width: 1px !important;
+    border-radius: 0 0 10px 10px;
+}
+
+.code-key {
+    color: var(--color-accent);
+}
+
+.code-value {
+    color: var(--color-detail);
+}
+
+/* ============================================
+   SECTIONS
+============================================ */
+#main-title {
+    color: white;
+}
+
+.h-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+    .h-grid {
+        flex-direction: column;
+    }
+}
+
+.h-grid .cell {
+    margin: auto;
+    flex-grow: 1;
+    min-width: 400px;
+}
+
+.profile {
+    margin: var(--spacing-xl) 0;
+    font-family: var(--font-sans);
+    font-size: 20px;
+    text-justify: auto;
+    text-align: justify;
+}
+
+.highlight {
+    color: var(--color-accent);
+}
+
+/* Background sections */
+#studies,
+#experience,
+#links {
+    background-color: var(--color-text-light);
+    color: var(--color-primary);
+}
+
+#studies {
+    opacity: 1;
+}
+
+#experience {
+    opacity: 0.8;
+}
+
+#links {
+    opacity: 1;
+}
+
+/* ============================================
+   LIST STYLES
+============================================ */
+.list-item {
+    list-style-type: none;
+    margin-bottom: var(--spacing-md);
 }
 
 .list-block {
     margin-bottom: 50px;
+}
+
+.no-tab-list {
+    padding-left: 0;
+}
+
+/* ============================================
+   UTILITY CLASSES
+============================================ */
+.link {
+    text-decoration: none;
 }
