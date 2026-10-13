@@ -1,0 +1,248 @@
+:root {
+    --primary-color: rgb(45, 57, 100);
+    --secondary-color: rgb(26, 29, 45);
+    --accent-color: rgb(198, 238, 89);
+    --detail-color: rgb(247, 156, 82);
+
+    --alt-primary-color: rgb(219, 219, 219);
+}
+
+body {
+    background-color: var(--primary-color);
+    margin: 0;
+}
+
+section {
+    margin: 0;
+}
+
+section div {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.section-title {
+    font-family: "Unbounded", sans-serif;
+    font-size: 30px;
+}
+
+.accent {
+    color: var(--accent-color);
+}
+
+.navbar {
+    font-family: "Albert Sans", sans-serif;
+    border-radius: 6px;
+    position: sticky;
+    z-index: 100;
+    top: 2px;
+    margin: 0 auto;
+    max-width: 1240px;
+    background-color: var(--secondary-color);
+}
+
+.navbar-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.navbar-links li {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+}
+
+.navbar-links a {
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-links a:hover {
+    color: var(--accent-color);
+}
+
+.path {
+    font-family: "Red Hat Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.path span {
+    color: rgb(203, 202, 202);
+}
+
+.path span:hover {
+    color: var(--accent-color);
+}
+
+#main-title {
+    color: white;
+}
+
+.h-grid {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+@media only screen and (max-width: 800px) {
+    .h-grid {
+        flex-direction: column;
+    }
+}
+
+
+.h-grid .cell {
+    margin: auto;
+    flex-grow: 1;
+    min-width: 400px;
+}
+
+.title {
+    font-size: 50px;
+    font-family: "Unbounded", sans-serif;
+}
+
+.code-block {
+    margin: 0 auto;
+    font-family: monospace;
+    line-height: 2;
+}
+
+.code-block div {
+    font-family: "Red Hat Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-size: 16px;
+    font-style: normal;
+    padding: 10px;
+    border-style: solid;
+    border-color: var(--accent-color);
+    border-width: 0 1px 0 1px;
+    border-collapse: collapse;
+    box-shadow: 0 0 1px var(--accent-color);
+    background-color: var(--secondary-color);
+
+}
+
+.code-block-header {
+    text-align: right;
+    border-top-width: 1px !important;
+    border-radius: 10px 10px 0 0;
+}
+
+.code-block-footer {
+    text-align: right;
+    border-bottom-width: 1px !important;
+    border-radius: 0 0 10px 10px;
+}
+
+.code-key {
+    color: var(--accent-color);
+}
+
+.code-value {
+    color: var(--detail-color);
+}
+
+.highlight {
+    color: var(--accent-color);
+}
+
+.profile {
+    margin: 40px 0;
+    font-family: "Albert Sans", sans-serif;
+    font-size: 20px;
+    text-justify: auto;
+    text-align: justify;
+}
+
+#studies {
+    background-color: var(--alt-primary-color);
+    color: var(--primary-color);
+    opacity: 1;
+}
+
+#experience {
+    background-color: var(--alt-primary-color);
+    color: var(--primary-color);
+    opacity: 0.8;
+}
+
+#links {
+    background-color: var(--alt-primary-color);
+    color: var(--primary-color);
+    opacity: 1;
+}
+
+.section-title {
+    margin: 0;
+}
+
+.list-item {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.link {
+    text-decoration: none;
+}
+
+.accent {
+    color: var(--accent-color);
+}
+
+.bg-accent {
+    color: var(--accent-color);
+    background-color: var(--secondary-color);
+    width: fit-content;
+    padding: 2px 5px;
+    border-radius: 6px;
+}
+
+.detail {
+    color: var(--detail-color);
+}
+
+.bg-detail {
+    color: var(--detail-color);
+    background-color: var(--secondary-color);
+    width: fit-content;
+    padding: 2px 5px;
+    border-radius: 6px;
+}
+
+.title-font {
+    font-family: "Unbounded", sans-serif;
+}
+
+.body-font {
+    font-family: "Albert Sans", sans-serif;
+    text-justify: auto;
+}
+
+.code-font {
+    font-family: "Red Hat Mono", monospace;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.no-tab-list {
+    padding-left: 0;
+}
+
+.list-block {
+    margin-bottom: 50px;
+}
