@@ -246,14 +246,14 @@ body {
 }
 
 /* Background sections */
-#studies,
+#education,
 #experience,
 #links {
     background-color: var(--color-text-light);
     color: var(--color-primary);
 }
 
-#studies {
+#education {
     opacity: 1;
 }
 
