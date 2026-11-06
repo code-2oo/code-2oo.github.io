@@ -169,6 +169,7 @@ body {
     line-height: 2;
     font-weight: 200;
     margin: 0 auto;
+    width: 100%;
 }
 
 .code-block div {
@@ -210,22 +211,27 @@ body {
 }
 
 .h-grid {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
-}
-
-@media only screen and (max-width: 1000px) {
-    .h-grid {
-        flex-direction: column;
-    }
 }
 
 .h-grid .cell {
     margin: auto;
-    flex-grow: 1;
     min-width: 400px;
+    width: 100%;
 }
+
+@media only screen and (max-width: 1000px) {
+    .h-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .h-grid .cell {
+        width: unset;
+    }
+}
+
 
 .profile {
     margin: var(--spacing-xl) 0;
